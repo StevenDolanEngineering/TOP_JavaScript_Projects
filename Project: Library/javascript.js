@@ -4,12 +4,14 @@ function Book(title, author, pages, haveRead) {
     this.pages = pages;
     this.id = crypto.randomUUID();  
     this.haveRead = haveRead;
-    function toggleRead() {
-        if (book.haveRead === 'yes') {
-            book.haveRead = 'no'
-        }
-        else book.haveRead = 'yes'
-    };
+
+};
+
+Book.prototype.toggleRead = function() {
+    if (this.haveRead === 'yes') {
+        this.haveRead = 'no'
+    }
+    else this.haveRead = 'yes'
 };
 
 function addBookToLibrary(title, author, pages, haveRead) {
@@ -28,6 +30,7 @@ function displayLibrary() {
     myLibrary.forEach((book) => {
         const bookDiv = document.createElement('div');
         bookDiv.classList.add('card');
+        bookDiv.dataset.id = book.id;
 
         const h3Title = document.createElement('h3');
         h3Title.classList.add('title');
@@ -41,6 +44,28 @@ function displayLibrary() {
         const pPages = document.createElement('p');
         pPages.textContent = `${book.pages} pages`;
         bookDiv.appendChild(pPages);
+
+        const pHaveRead = document.createElement('p');
+        pHaveRead.textContent = `Have Read: ${book.haveRead}`;
+        bookDiv.appendChild(pHaveRead);
+
+        const toggleReadBtn = document.createElement('button');
+        toggleReadBtn.classList.add('btn');
+        toggleReadBtn.textContent = `Change read status`;
+        toggleReadBtn.addEventListener('click', () => {
+            book.toggleRead();
+            displayLibrary();
+        });
+        bookDiv.appendChild(toggleReadBtn);
+
+        const removeBtn = document.createElement('button');
+        removeBtn.classList.add('btn');
+        removeBtn.textContent = `Remove book`;
+        removeBtn.addEventListener('click', () => {
+            const targetIndex = myLibrary.findIndex(b => b.id === book.id);
+            myLibrary.splice(targetIndex, 1);
+            displayLibrary();
+        });
 
 
         libraryGrid.appendChild(bookDiv);
@@ -117,6 +142,7 @@ addBookButton.addEventListener('click', () => {
         const haveRead = haveReadInput.checked ? 'yes' : 'no';
         
         addBookToLibrary(title, author, pages, haveRead);
+        displayLibrary();
         newdiv.remove(); // Remove the form after submission
     });
     form.appendChild(submitButton);
