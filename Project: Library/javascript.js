@@ -12,7 +12,7 @@ function addBookToLibrary(title, author, pages, haveRead) {
 
 const myLibrary = [];
 
-
+// Will create a form to add a new book to the library.
 const addBookButton = document.getElementById('addBookButton');
 addBookButton.addEventListener('click', () => {
 
@@ -20,13 +20,14 @@ addBookButton.addEventListener('click', () => {
         return; // Prevent multiple forms from being created
     }
 
-    // Will create a form to add a new book to the library.
+
     const newdiv = document.createElement('div');
     newdiv.classList.add("form-container");
 
     const form = document.createElement('form');
     form.id = "add-book-form";
 
+    //Form inputs for title, author, pages, and haveRead.
     const titleInput = document.createElement('input');
     titleInput.type = "text";
     titleInput.placeholder = 'Title';
@@ -71,8 +72,21 @@ addBookButton.addEventListener('click', () => {
     const submitButton = document.createElement('button');
     submitButton.type = 'submit';
     submitButton.textContent = 'Add Book';
+
+    // Submit details to addBookToLibrary function and remove form from page.
+    submitButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        const title = titleInput.value;
+        const author = authorInput.value;
+        const pages = pagesInput.value;
+        const haveRead = haveReadInput.checked ? 'yes' : 'no';
+        
+        addBookToLibrary(title, author, pages, haveRead);
+        newdiv.remove(); // Remove the form after submission
+    });
     form.appendChild(submitButton);
 
+    //Cancel button to remove the form from the page.
     const cancelButton = document.createElement('button');
     cancelButton.type = 'button';
     cancelButton.textContent = 'Cancel';
