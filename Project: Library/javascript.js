@@ -2,7 +2,9 @@ function Book(title, author, pages, haveRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
+
     this.haveRead = haveRead;
+
 };
 
 function addBookToLibrary(title, author, pages, haveRead) {
@@ -13,7 +15,31 @@ function addBookToLibrary(title, author, pages, haveRead) {
 const myLibrary = [];
 
 function displayLibrary() {
-    // Creates cards for each book in the mLibrary array.
+    // Clears cards from #library-list container so cards do not reprint
+    const libraryGrid = document.getElementById('library-list');
+    libraryGrid.innerHTML = '';
+
+    //For Each loop that will iterate through myLibrary[] to create a card for each book
+    myLibrary.forEach((book) => {
+        const bookDiv = document.createElement('div');
+        bookDiv.classList.add('card');
+
+        const h3Title = document.createElement('h3');
+        h3Title.classList.add('title');
+        h3Title.textContent = book.title;
+        bookDiv.appendChild(h3Title);
+
+        const pAuthor = document.createElement('p');
+        pAuthor.textContent = `By: ${book.author}`;
+        bookDiv.appendChild(pAuthor);
+
+        const pPages = document.createElement('p');
+        pPages.textContent = `${book.pages} pages`;
+        bookDiv.appendChild(pPages);
+
+
+        libraryGrid.appendChild(bookDiv);
+    });
 };
 
 // Will create a form to add a new book to the library.
