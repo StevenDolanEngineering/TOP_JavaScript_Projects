@@ -12,6 +12,10 @@ function addBookToLibrary(title, author, pages, haveRead) {
 
 const myLibrary = [];
 
+function displayLibrary() {
+    // Creates cards for each book in the mLibrary array.
+};
+
 // Will create a form to add a new book to the library.
 const addBookButton = document.getElementById('addBookButton');
 addBookButton.addEventListener('click', () => {
