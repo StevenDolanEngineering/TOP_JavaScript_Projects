@@ -106,6 +106,17 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 20px;
 }
 
+#library-list .card {
+    background-color: #FFFFFF;
+    color: black;
+    text-align: center;
+}
+
+.card p {
+    color: black;
+    font-weight: normal;
+    font-size: 14px;
+}
 /* footer and signature */
 #footer {
     background-color: #3c036b;
