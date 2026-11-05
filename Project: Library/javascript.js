@@ -2,9 +2,14 @@ function Book(title, author, pages, haveRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-
+    this.id = crypto.randomUUID();  
     this.haveRead = haveRead;
-
+    function toggleRead() {
+        if (book.haveRead === 'yes') {
+            book.haveRead = 'no'
+        }
+        else book.haveRead = 'yes'
+    };
 };
 
 function addBookToLibrary(title, author, pages, haveRead) {
