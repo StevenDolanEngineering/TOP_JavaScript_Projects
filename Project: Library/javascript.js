@@ -1,9 +1,13 @@
-function Book() {
-    // the Book constructor...
+function Book(title, author, pages, haveRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.haveRead = haveRead;
 };
 
-function addBookToLibrary() {
-    // code to add a book to the library...
+function addBookToLibrary(title, author, pages, haveRead) {
+    const newBook = new Book(title, author, pages, haveRead);
+    myLibrary.push(newBook);
 };
 
 const myLibrary = [];
