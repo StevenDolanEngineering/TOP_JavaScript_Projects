@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 #grid-container {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr 75px;
 }
 
 #header {
@@ -68,6 +68,18 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     gap: 20px;
     min-height: 100vh;
+}
+
+#footer {
+    background-color: #3c036b;
+    color: white;
+    padding: 18px;
+    text-align: center;
+    grid-column: span 2;
+}
+
+#footer p {
+    font-size: 20px;
 }
 
 .form-container {
@@ -89,3 +101,4 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
