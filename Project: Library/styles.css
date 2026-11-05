@@ -66,5 +66,26 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
     min-height: 100vh;
+}
+
+.form-container {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#add-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#add-book-form input[type="text"],
+#add-book-form input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
