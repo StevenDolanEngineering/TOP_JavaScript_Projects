@@ -47,9 +47,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* End of CSS Reset */
 
+#grid-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: auto 1fr;
+}
+
 #header {
     background-color: #075baf;
     color: white;
     padding: 20px;
     text-align: center;
+    grid-column: span 2;
 }
