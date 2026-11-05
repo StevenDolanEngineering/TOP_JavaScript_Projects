@@ -47,6 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* End of CSS Reset */
 
+/* Grid layout for the entire page */
 #grid-container {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -61,6 +62,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-column: span 2;
 }
 
+/* Sidebar and form styling */
 #sidebar {
     background-color: #a1ade0;
     padding: 20px;
@@ -68,18 +70,6 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     gap: 20px;
     min-height: 100vh;
-}
-
-#footer {
-    background-color: #3c036b;
-    color: white;
-    padding: 18px;
-    text-align: center;
-    grid-column: span 2;
-}
-
-#footer p {
-    font-size: 20px;
 }
 
 .form-container {
@@ -101,4 +91,22 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+/* Card display for added books */
+
+
+/* footer and signature */
+#footer {
+    background-color: #3c036b;
+    color: white;
+    padding: 18px;
+    text-align: center;
+    grid-column: span 2;
+}
+
+#footer p {
+    font-size: 20px;
+}
+
+
 
