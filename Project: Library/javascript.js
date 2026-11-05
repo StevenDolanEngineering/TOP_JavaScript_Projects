@@ -66,6 +66,7 @@ function displayLibrary() {
             myLibrary.splice(targetIndex, 1);
             displayLibrary();
         });
+        bookDiv.appendChild(removeBtn);
 
 
         libraryGrid.appendChild(bookDiv);
