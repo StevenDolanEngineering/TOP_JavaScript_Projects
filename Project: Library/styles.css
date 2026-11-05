@@ -60,3 +60,11 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     grid-column: span 2;
 }
+
+#sidebar {
+    background-color: #a1ade0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
