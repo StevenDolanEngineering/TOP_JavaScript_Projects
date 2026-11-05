@@ -71,7 +71,7 @@ addBookButton.addEventListener('click', () => {
 
     const submitButton = document.createElement('button');
     submitButton.type = 'submit';
-    submitButton.textContent = 'Add Book';
+    submitButton.textContent = 'Submit';
 
     // Submit details to addBookToLibrary function and remove form from page.
     submitButton.addEventListener('click', (event) => {
@@ -96,5 +96,6 @@ addBookButton.addEventListener('click', () => {
     form.appendChild(cancelButton);
 
     newdiv.appendChild(form);
-    document.body.appendChild(newdiv);
+    const sidebar = document.getElementById('sidebar');
+    sidebar.appendChild(newdiv);
 });
