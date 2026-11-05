@@ -73,6 +73,14 @@ addBookButton.addEventListener('click', () => {
     submitButton.textContent = 'Add Book';
     form.appendChild(submitButton);
 
+    const cancelButton = document.createElement('button');
+    cancelButton.type = 'button';
+    cancelButton.textContent = 'Cancel';
+    cancelButton.addEventListener('click', () => {
+        newdiv.remove();
+    });
+    form.appendChild(cancelButton);
+
     newdiv.appendChild(form);
     document.body.appendChild(newdiv);
 });
