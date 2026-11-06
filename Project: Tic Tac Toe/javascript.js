@@ -4,6 +4,5 @@ const gameBoard = {
 
 function createPlayer(name) {
     this.name = name;
-
 };
 
