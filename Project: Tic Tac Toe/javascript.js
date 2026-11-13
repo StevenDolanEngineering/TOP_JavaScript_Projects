@@ -71,11 +71,11 @@ const gameController = (() => {
         });
 
         if (hasWon) {
-            alert(`${activePlayer.getName()} is the winner!`);
+            setTimeout(() => {alert(`${activePlayer.getName()} is the winner!`)}, 100);
             gameOver = true;
             return true;
         } else if (!board.includes("")) {
-            alert("It is a tie!");
+            setTimeout(() => {alert("It is a tie!")}, 100);
             gameOver = true;
             return true;
         }
