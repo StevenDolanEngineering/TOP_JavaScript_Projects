@@ -91,15 +91,39 @@ const gameController = (() => {
     return { getActivePlayer, switchPlayer, playRound, resetGame };
 })();
 
-const startButton = document.getElementById('start-button');
-startButton.addEventListener('click', () => {
-    const gameContainer = document.getElementById('game-container');
-    gameContainer.innerHTML = '';
+
+
+const displayController = (() => {
+    const startButton = document.getElementById('start-button');
     
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('grid-container');
+    const renderBoard = () => {
+        const gameContainer = document.getElementById('game-container');
+        gameContainer.innerHTML = '';
+    
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('grid-container');
 
-    gameContainer.appendChild(newDiv);
-});
+        const board = gameBoard.getBoard();        
+        board.forEach((cell, index) => {
+            const newCell = document.createElement('div');
+            newCell.classList.add('grid-cell');
+            newCell.innerHTML = cell;
 
+            newCell.addEventListener('click', () => {
+                gameController.playRound(index);
+                renderBoard();
+            });
 
+            newDiv.appendChild(newCell);
+        });
+
+        gameContainer.appendChild(newDiv);        
+    };
+
+    startButton.addEventListener('click', () => {
+        gameController.resetGame();
+        renderBoard();
+    });    
+
+    return { renderBoard }
+})();
