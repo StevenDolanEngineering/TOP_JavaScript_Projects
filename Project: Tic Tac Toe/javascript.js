@@ -71,7 +71,7 @@ const gameController = (() => {
         });
 
         if (hasWon) {
-            alert(`${activePlayer} is the winner!`);
+            alert(`${activePlayer.getName()} is the winner!`);
             gameOver = true;
             return true;
         } else if (!board.includes("")) {
