@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
-.game-container {
+#game-container {
     border: 4px solid #555555;
 
     width: 600px;
