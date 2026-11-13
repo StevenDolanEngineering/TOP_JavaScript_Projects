@@ -18,8 +18,11 @@ const gameBoard = (() => {
     return { getBoard, placeMarker, resetBoard };
 })();
 
-function createPlayer(name) {
-    this.name = name;
+function createPlayers(name, marker) {
+    const getName = () => name;
+    const getMarker = () => marker;
+
+    return { getName, getMarker };
 };
 
 const startButton = document.getElementById('start-button');
