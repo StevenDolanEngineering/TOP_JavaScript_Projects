@@ -100,6 +100,6 @@ startButton.addEventListener('click', () => {
     newDiv.classList.add('grid-container');
 
     gameContainer.appendChild(newDiv);
-};
+});
 
 
