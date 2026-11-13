@@ -116,6 +116,15 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
 }
 
+.grid-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+
+  background-color: #ffffff;
+}
+
 
 #footer {
     background-color: #993f7e;
