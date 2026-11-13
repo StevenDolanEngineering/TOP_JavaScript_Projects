@@ -1,6 +1,22 @@
-const gameBoard = {
-    board: Array.from({ length: 9 }),
-};
+const gameBoard = (() => {
+    let board = Array(9).fill("");
+
+    const getBoard = () => board;
+
+    const placeMarker = (index, marker) => {
+        if (board[index] === "") {
+            board[index] = marker;
+            return true;
+        }
+        return false;
+    };
+
+    const resetBoard = () => {
+        board = Array(9).fill("");
+    };
+    
+    return { getBoard, placeMarker, resetBoard };
+})();
 
 function createPlayer(name) {
     this.name = name;
@@ -16,3 +32,5 @@ startButton.addEventListener('click', () => {
 
     gameContainer.appendChild(newDiv);
 };
+
+
